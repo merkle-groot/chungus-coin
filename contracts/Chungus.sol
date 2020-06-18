@@ -5,6 +5,7 @@ contract Chungus{
     string  public symbol = "CNGS";
     string  public standard = "Chungus Token v1.0";
     uint256 public totalSupply;
+    uint8 public decimals;
 
     event Transfer(
         address indexed _from,
@@ -24,6 +25,7 @@ contract Chungus{
     constructor (uint256 _initialSupply) public {
         balanceOf[msg.sender] = _initialSupply;
         totalSupply = _initialSupply;
+        decimals = 2;
     }
 
     function transfer(address _to, uint256 _value) public returns (bool success) {
